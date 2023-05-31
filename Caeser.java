@@ -3,10 +3,10 @@ public class Caeser extends Cipher {
         super(s);
     }
     public String encode(String word) {
-        return code(word,Constants.ENCODE_SHIFT );
+        return code(word,Constants.ENCODE_SHIFT);
     }
     public String decode(String word) {
-        // Complete this method so that it decodes the encoded string
+        return code(word,Constants.DECODE_SHIFT);
     }
 
     String code(String word, int SHIFT) {
@@ -22,7 +22,8 @@ public class Caeser extends Cipher {
     public char determineCharacter(char ch, final int shift) {
         if(Character.isUpperCase(ch))
             ch = (char)('A' + (ch - 'A' + shift) % Constants.WRAP_AROUND);
-        // Complete the if/else so that lower case letters are accounted for
+        else 
+            ch = (char)('a' + (ch - 'a' + shift) % Constants.WRAP_AROUND);
         return ch;
     }
 } 

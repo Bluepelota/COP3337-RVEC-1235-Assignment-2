@@ -8,6 +8,8 @@ public class Transpose extends Cipher {
         return result.toString();
     }
     public String decode(String word) {
-        // Complete this method so that it reverses the encoded string;
+        StringBuffer result = new StringBuffer(word);
+        result.reverse();
+        return result.toString();
     }
 } 
