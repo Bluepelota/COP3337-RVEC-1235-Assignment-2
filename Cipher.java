@@ -4,6 +4,7 @@ public abstract class Cipher {
     StringBuffer encrypted_message, decrypted_message;
     public Cipher(String text) {
         // Complete the constructor definition
+        this.message = text;
     }
     public final void encrypt() {
         /* The message string is tokenized into individual words,
@@ -21,7 +22,13 @@ public abstract class Cipher {
         /* The encoded message string is tokenized into individual words,
         * and each word is encoded by calling the decode method
         */
-        // Supply the code that will decrypt the encrypted string
+        decrypted_message = new StringBuffer();
+        StringTokenizer words = new StringTokenizer(message);
+        while(words.hasMoreTokens()) {
+            String s = words.nextToken();
+            s = decode(s) + " ";
+            decrypted_message.append(s);
+        }
     }
     public String getEncodedMessage() {
         return encrypted_message.toString();
