@@ -1,0 +1,21 @@
+public class Reverser extends Transpose {       // I'm not getting the encrypted Reverse message correctly, so I'll continue working on it
+    public Reverser(String s) {
+        super(s);
+    }
+    public String reverseText(String word) {
+    	StringBuffer result = new StringBuffer(word);
+    	result.reverse();
+    	return result.toString();
+    }
+    
+    public String decode(String word) {
+        String reverseWord = super.decode(word);
+        String[] words = reverseWord.split(" ");
+        StringBuffer result = new StringBuffer();
+        for (int i = words.length - 1; i >= 0; i--)	{
+        	result.append(words[i]).append(" ");
+        }
+        return result.toString().trim();
+    }
+}
+
