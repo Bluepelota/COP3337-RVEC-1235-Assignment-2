@@ -24,7 +24,7 @@ public class TestEncryption {
 
         c = new Reverser(text);
         c.encrypt();
-        code = c.getEncodedMessage();
+        code = c.encode(text);
         output += "\nReverser\nThe encrypted Reverse message is \n" + code+ "\n";
         c.decrypt(code);
         code = c.decode(code);
